@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Les listings</title>
+</head>
+<body>
+    <h1>Listings</h1>
+    <p>Les listings de produits !</p>
+    <ul>
+        {% for listing in listings %}
+            <li>{{ listing.title }}</li>
+        {% endfor %}
+    </ul>
+    <p>Nombre d'articles en vente : {{ listings|length }}</p>
+    {% if listings|length < 5 %}
+        Attention moins de 5 articles !
+    {% endif %}
+</body>
+</html>
